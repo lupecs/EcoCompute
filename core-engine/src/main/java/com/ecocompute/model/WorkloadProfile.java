@@ -21,6 +21,8 @@ public class WorkloadProfile {
 
     private CompressionLevel compressionLevel;
 
+    private CompressionRecommendation compressionRecommendation;
+
     private CpuRequirement cpuRequirement;
 
     private MemoryRequirement memoryRequirement;
