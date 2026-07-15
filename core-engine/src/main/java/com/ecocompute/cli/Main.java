@@ -2,6 +2,7 @@ package com.ecocompute.cli;
 
 import com.ecocompute.analyzer.FileAnalyzer;
 import com.ecocompute.compression.CompressionAnalyzer;
+import com.ecocompute.compression.CompressionEstimator;
 import com.ecocompute.model.*;
 
 import java.io.File;
@@ -26,6 +27,12 @@ public class Main {
         CompressionRecommendation recommendation =
                 compressionAnalyzer
                         .recommend(level);
+
+        CompressionEstimator estimator = new CompressionEstimator();
+
+        CompressionMetrics metrics = estimator.estimate(profile);
+
+        System.out.println(metrics);
 
 
         profile.setCompressionLevel(level);
